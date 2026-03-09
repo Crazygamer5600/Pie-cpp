@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 
+
 class Pie {
 public:
 	std::string describer;
@@ -14,7 +15,7 @@ public:
 		return describer;
 	}
 	virtual void summary() {
-		std::cout << describer << " " << tastiness << "\n";
+		std::cout << describer << " is " << tastiness << "\n";
 	}
 };
 
@@ -48,17 +49,39 @@ public:
 
 
 int main() {
+	std::cout << "Welcome To Mina's Bakery,\n for Apple Pie, type 1, \n for Rasberry Pie, type 2, \n for Apricot Pie, type 3\n";
 	ApplePie applePie;
-	std::cout<<applePie.description() <<"\n";
 	applePie.summary();
 
 	RasberryPie rasberryPie;
-	std::cout << rasberryPie.description() << "\n";
 	rasberryPie.summary();
 
 	ApricotPie apricotPie;
-	std::cout << apricotPie.description() << "\n";
 	apricotPie.summary();
+
+	Pie* piePtr = nullptr;
+	std::string inpt;
+	std::cout << ">>";
+	std::cin >> inpt;
+
+	
+	while (inpt != "1" && inpt != "2" && inpt != "3") {
+		std::cout << "Incorrect Value! ,\n for Apple Pie, type 1, \n for Rasberry Pie, type 2, \n for Apricot Pie, type 3\n>>";
+		std::cin >> inpt;
+	}
+
+	switch (stoi(inpt)) {
+		case 1:
+			piePtr = new ApplePie();
+			break;
+		case 2:
+			piePtr = new RasberryPie();
+			break;
+		case 3:
+			piePtr = new ApricotPie();
+			break;
+	}
+	std::cout << "Successfully ordered: " << piePtr->description();
 
 	return 0;
 }
