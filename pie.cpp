@@ -49,12 +49,15 @@ public:
 
 int main() {
 	ApplePie applePie;
+	std::cout<<applePie.description() <<"\n";
 	applePie.summary();
 
 	RasberryPie rasberryPie;
+	std::cout << rasberryPie.description() << "\n";
 	rasberryPie.summary();
 
 	ApricotPie apricotPie;
+	std::cout << apricotPie.description() << "\n";
 	apricotPie.summary();
 
 	return 0;
