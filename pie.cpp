@@ -11,9 +11,8 @@ public:
 		describer = desc;
 		tastiness = taste;
 	}
-	virtual std::string description() = 0 {
-		return describer;
-	}
+	virtual std::string description() = 0;
+
 	virtual void summary() {
 		std::cout << describer << " is " << tastiness << "\n";
 	}
