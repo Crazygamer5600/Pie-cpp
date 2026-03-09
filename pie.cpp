@@ -81,6 +81,7 @@ int main() {
 			break;
 	}
 	std::cout << "Successfully ordered: " << piePtr->description();
+	delete piePtr;
 
 	return 0;
 }
