@@ -1,8 +1,13 @@
-﻿// pie.h : Include file for standard system include files,
-// or project specific include files.
+#ifndef PIE_H
+#define PIE_H
+#include <string>
 
-#pragma once
 
-#include <iostream>
+class Pie {
+public:
+	virtual std::string description() = 0;
+	std::string tastiness();
+	virtual ~Pie() = default;
+};
 
-// TODO: Reference additional headers your program requires here.
+#endif // PIE_H#pragma once
